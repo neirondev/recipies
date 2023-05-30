@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ge.neirondev.kitchenrecipe.presentation.ui.RecepiesScreen
 import ge.neirondev.kitchenrecipe.ui.theme.KitchenRecipeTheme
+import ge.neirondev.kitchenrecipe.ui.theme.ReceiptTheme
+import ge.neirondev.kitchenrecipe.ui.theme.RecipesTheme
 import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
@@ -25,13 +27,13 @@ class MainActivity : ComponentActivity() {
         component.inject(this)
         super.onCreate(savedInstanceState)
         setContent {
-            KitchenRecipeTheme {
+            RecipesTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //Greeting("Android")
+                   // Greeting("Android")
                     RecepiesScreen(viewModelFactory =this.viewModelFactory)
                 }
             }
